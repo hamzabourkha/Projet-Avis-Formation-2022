@@ -1,0 +1,26 @@
+﻿@model List<AvisFormation.WebUi.Models.AccueilViewModel>
+@{
+    ViewBag.Title = "ListeDesFormations";
+}
+<h2>ListeDesFormations</h2>
+@foreach (var f in Model)
+{
+    <div><span>@f.Nom</span></div>
+    <div><span>@f.Description</span></div>
+    <div><span>@f.Url</span></div>
+    if(f.Note == 0)
+    {
+        <div><span>Sans note !</span></div>
+        <div><span>Sans avis</span></div>
+    }
+    else
+    {
+        <div><span>@f.Note</span></div>
+        <div><span>@f.NombreAvis</span></div>
+    }
+
+
+
+    <hr />
+}
+

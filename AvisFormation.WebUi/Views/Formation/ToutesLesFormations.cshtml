@@ -1,0 +1,26 @@
+﻿@model List<AvisFormation.WebUi.Models.FormationAvecAvisViewModel>
+@{
+    ViewBag.Title = "ToutesLesFormations";
+}
+
+<h2>Liste Des Formations</h2>
+<div class="container">
+    <div class="row">
+
+        @foreach (var formation in Model)
+        {
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem; height: 30rem;">
+                    <img src="~/Content/img/2.jpg" class="card-img-top" alt="" />
+                    <div class="card-body">
+                        <h5 class="card-title">@formation.Nom</h5>
+                        <p>Nombre d'avis: @formation.NombreAvis</p>
+                        <p>Note : @formation.Note</p>
+                        <p class="card-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">@formation.Description</p>
+                        <a href="~/formation/@formation.NomSeo" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
