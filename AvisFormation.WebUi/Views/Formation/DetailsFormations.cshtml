@@ -11,10 +11,11 @@
 <div> <span> Description : </span><span> @Model.Description</span></div>
 @if (Model.Note != 0)
 {
-<div> <span> Note : </span><span> @Model.Note</span></div>
+    <div> <span> Note : </span><span> @Model.Note</span></div>
 }
-else { 
-<div> <span> Note : </span><span> Sans note !</span></div>
+else
+{
+    <div> <span> Note : </span><span> Sans note !</span></div>
 }
 <div> <span> Nombre d'avis : </span><span> @Model.NombreAvis</span></div>
 @foreach (var avis in Model.Avis)
@@ -24,5 +25,5 @@ else {
     <div> <span>Commontaire: @avis.Description</span> </div>
     <div> <span>Note: @avis.Note</span> </div>
 }
-<a href="~/avis/@Model.NomSeo" class="btn btn-primary mb-2">Ajouter un avis </a>
+@Html.ActionLink("Ajouter un avis", "AjouterUnAvis", "Avis", new { nomSeo = Model.NomSeo }, new { @class = "btn btn-primary mb-2" })
 <a href="~/toutes-les-formations" class="btn btn-primary mb-2">Retour </a>

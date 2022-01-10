@@ -26,7 +26,7 @@ namespace AvisFormation.WebUi
 
             routes.MapRoute(
                 name: "ajouterunavis",
-                url: "avis/{nomSeo}",
+                url: "avisformation/{nomSeo}",
                 defaults: new { controller = "Avis", action = "AjouterUnAvis" }
             );
 
