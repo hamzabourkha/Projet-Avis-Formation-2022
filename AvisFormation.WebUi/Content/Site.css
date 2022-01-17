@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #F5F5F5;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -17,8 +18,82 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
+}*/
+.jumbotron {
+    background-color: black;
+    color: orange;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.logo-small {
+    color: orange;
+    font-size: 50px;
+}
+
+.padding30 {
+    padding: 30px;
+}
+
+.widget {
+    background-color: white;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+    .widget div {
+        padding: 15px;
+    }
+
+.widget-bottom {
+    background-color: orange;
+    color: white;
+}
+
+.yellow {
+    color: #FFBD00;
+}
+
+.bigpercent {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+    .navbar li a:hover {
+        background-color: #fff !important;
+        color: black !important;
+    }
+
+.info-block {
+    background-color: white;
+    padding: 15px;
+    border: 2px solid #F5F5F5;
+    min-height: 225px;
+}
+
+.lien-formation {
+    color: orange;
+}
+
+.big-link {
+    font-size: 1.5em;
+}
+
+.bg-grey {
+    background-color: #F5F5F5;
+}
+
+.avis {
+    border-radius: 5px;
+    padding: 15px
 }

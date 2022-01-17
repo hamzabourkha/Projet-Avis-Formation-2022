@@ -26,4 +26,6 @@ else
     <div> <span>Note: @avis.Note</span> </div>
 }
 @Html.ActionLink("Ajouter un avis", "AjouterUnAvis", "Avis", new { nomSeo = Model.NomSeo }, new { @class = "btn btn-primary mb-2" })
-<a href="~/toutes-les-formations" class="btn btn-primary mb-2">Retour </a>
+@Html.ActionLink("Retour","ToutesLesFormations","Formation", new { nomSeo= Model.NomSeo}, new { @class= "btn btn-primary mb-2" })
+
+<link href="~/Content/font-awesome.css" rel="stylesheet" />

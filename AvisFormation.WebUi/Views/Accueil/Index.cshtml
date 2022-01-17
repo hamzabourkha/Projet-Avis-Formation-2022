@@ -1,31 +1,120 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model List<AvisFormation.WebUi.Models.AccueilViewModel>
+@{
+    ViewBag.Title = "Accueil";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="jumbotron text-center">
+    <h1>EPIM E-Learning</h1>
+    <p>Choisissez la meilleure formation !</p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div class="container">
+
+    @foreach (var dto in Model)
+    {
+        <article class="info-block col-md-3 col-sm-6">
+            <h4>
+                @Html.ActionLink(dto.Nom, "DetailsFormation", "Formation", new { nomSeo = dto.NomSeo }, new { @class = "lien-formation", @target = "_blank" })
+
+            </h4>
+            <p>
+                @if (dto.Note == 0)
+                {
+                    <span>Aucun Avis</span>
+                }
+                else
+                {
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                    if (dto.Note > 1)
+                    {
+                        <span class="glyphicon glyphicon-star yellow"></span>
+                    }
+                    if (dto.Note > 2)
+                    {
+                        <span class="glyphicon glyphicon-star yellow"></span>
+                    }
+                    if (dto.Note > 3)
+                    {
+                        <span class="glyphicon glyphicon-star yellow"></span>
+                    }
+                    if (dto.Note > 4)
+                    {
+                        <span class="glyphicon glyphicon-star yellow"></span>
+                    }
+                    <span>@dto.Note / 5</span>
+                }
+            </p>
+            <p>@dto.Description</p>
+        </article>
+
+    }
+</div>
+
+
+<div class="container bg-white text-center padding30">
+    <h2>Pourquoi utiliser Avis Formation ?</h2>
+    <h3>Bénéfices formateur</h3>
+
+    <div class="row">
+        <div class="col-md-6">
+            <span class="glyphicon glyphicon-shopping-cart logo-small"></span>
+            <h4>Conversion</h4>
+            <p>Améliorez votre taux de conversion</p>
+        </div>
+        <div class="col-md-6">
+            <span class="glyphicon glyphicon-fullscreen logo-small"></span>
+            <h4>Visibilité </h4>
+            <p>Améliorez votre visibilité</p>
+        </div>
+        <div class="col-md-6">
+            <span class="glyphicon glyphicon-tree-deciduous logo-small"></span>
+            <h4> Fidélisation</h4>
+            <p>Obtenez des clients plus fidèles et engagés</p>
+        </div>
+        <div class="col-md-6">
+            <span class="glyphicon glyphicon-heart-empty logo-small"></span>
+            <h4>Confiance</h4>
+            <p>Vous bénéficiez des retours d'anciens élèves pour améliorer vos produits</p>
+        </div>
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+</div>
+<div class="container text-center padding30">
+    <div class="row">
+        <div class="col-md-8">
+            <h3> Professionnels de la formation, affichez notre badge sur votre site pour augmenter vos conversions !</h3>
+        </div>
+        <div class="col-md-4">
+            <div class="widget">
+                <div>
+                    Avis Elèves 4.8 / 5
+                    <span class="glyphicon glyphicon-star yellow"></span><span class="glyphicon glyphicon-star yellow"></span><span class="glyphicon glyphicon-star yellow"></span><span class="glyphicon glyphicon-star yellow"></span><span class="glyphicon glyphicon-star yellow"></span>
+                </div>
+                <div class="widget-bottom">
+                    Avis récoltés par AvisFormation.fr
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</div>
+<div class="container bg-white text-center padding30">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="bigpercent">85%</p>
+            <p><b>85% des internautes consultent les avis clients avant d'acheter en ligne</b></p>
+        </div>
+        <div class="col-md-3">
+            <p class="bigpercent">91%</p>
+            <p><b>91% de ceux qui lisent les avis les considèrent comme le vecteur numéro 1 dans leur décision d'achat</b></p>
+        </div>
+        <div class="col-md-3">
+            <p class="bigpercent">25%</p>
+            <p><b>+25% du taux de conversion pour les sites avec étoiles Google</b></p>
+
+        </div>
+        <div class="col-md-3">
+            <p class="bigpercent"> 80%</p>
+            <p><b>80 % des avis ont une note et un commentaire positifs</b></p>
+        </div>
     </div>
 </div>

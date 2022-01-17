@@ -15,7 +15,11 @@
                     <div class="card-body">
                         <h5 class="card-title">@formation.Nom</h5>
                         <p>Nombre d'avis: @formation.NombreAvis</p>
-                        <p>Note : @formation.Note</p>
+                        <p>
+                            @for (int i = 0; i < formation.Note; i++)
+                            {
+                            <span class="glyphicon glyphicon-star"></span>
+                            }
                         <p class="card-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">@formation.Description</p>
                         <a href="~/formation/@formation.NomSeo" class="btn btn-primary">Details</a>
                     </div>
@@ -24,3 +28,4 @@
         }
     </div>
 </div>
+<link href="~/Content/font-awesome.css" rel="stylesheet" />

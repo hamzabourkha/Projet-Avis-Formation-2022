@@ -4,10 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    <title>@ViewBag.Title - EPIM E-Learning </title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -18,13 +17,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nom d'application", "Index", "Accueil", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("EPIM E-Learning", "Index", "Accueil", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Accueil", "Index", "Accueil")</li>
-                    <li>@Html.ActionLink("À propos de", "About", "Accueil")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Accueil")</li>
+                    <li>@Html.ActionLink("Catalogues des formations", "ToutesLesFormations", "Formation")</li>
+                    <li>@Html.ActionLink("Contactez", "Contact", "Accueil")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -34,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mon application ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - EPIM E-Learning</p>
         </footer>
     </div>
 
